@@ -18,10 +18,9 @@ body .App .main {
   background-repeat: no-repeat;
 }
 body .App .main1 {
-  background-image: url("../assets/desktop-image-hero-1.jpg");
   grid-column: 1/9;
   background-size: cover;
-  position: relative;
+  background-position: center center;
 }
 body .App .main1 .navbar {
   top: 45px;

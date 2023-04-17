@@ -3,7 +3,7 @@ import logo from '../assets/logo.svg';
 import logo1 from '../assets/desktop-image-hero-1.jpg';
 import logo2 from '../assets/desktop-image-hero-2.jpg';
 import logo3 from '../assets/desktop-image-hero-3.jpg';
-import { motion } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 
 interface IProps{
     count:number
@@ -30,23 +30,25 @@ export const Main1 : React.FC<IProps> = ({count}) =>{
                 break
             }
         }
+
     },[count])
     
     return(
-        <motion.div initial={{opacity:0.5}}  animate={{opacity:1}} transition={{ duration: 0.5 }} className="main main1" style={{backgroundImage:`url(${ımg})`}} >
-            <div className="navbar">
-                <div className="logo">
-                    <svg style={{width:"65px"}}>
-                        <image href={logo} />
-                    </svg>
-                </div>
-                <div className="sec">Home</div>
-                <div className="sec">Shop</div>
-                <div className="sec">About us</div>
-                <div className="sec">Contact</div>
-        
+       <AnimatePresence> 
+            <motion.div key={`${ımg}-${count}`} initial={{x:-50}}  animate={{x:0}} transition={{ duration: 1 }} className="main main1" style={{backgroundImage:`url(${ımg})`}} >
+                <div className="navbar">
+                     <div className="logo">
+                        <svg style={{width:"65px"}}>
+                            <image href={logo} />
+                        </svg>
+                    </div>
+                    <div className="sec">Home</div>
+                    <div className="sec">Shop</div>
+                    <div className="sec">About us</div>
+                    <div className="sec">Contact</div>
             </div>
 
-        </motion.div>
+            </motion.div>
+        </AnimatePresence>
     )
 }

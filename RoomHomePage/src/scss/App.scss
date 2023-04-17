@@ -25,11 +25,10 @@
         }
 
         .main1{
-            background-image: url("../assets/desktop-image-hero-1.jpg");
             grid-column: 1/9;
             background-size: cover;
-            
-            position: relative;
+            background-position: center center;
+
             .navbar{
                 top: 45px;
                 left: 65px;

@@ -2,6 +2,7 @@ import arrow from "../assets/icon-arrow.svg"
 import  leftsvg  from "../assets/icon-angle-left.svg"
 import  rightsvg  from "../assets/icon-angle-right.svg"
 import { asset } from "../Model/model"
+import { motion } from "framer-motion"
 
 
 
@@ -32,8 +33,8 @@ export const Main2: React.FC<IProps> = ({count,setCount,mainAsset}) =>{
 
     return(
         <div className="main main2" >
-            <h1>{mainAsset.title}</h1>
-            <p>{mainAsset.content}</p>
+            <motion.h1 key={`title-${count}`} initial={{ opacity:0.1}} animate={{opacity:1}} transition={{duration:1.2}}>{mainAsset.title}</motion.h1>
+            <motion.p key={`content-${count}`} initial={{ opacity:0.1}} animate={{opacity:1}} transition={{duration:1.2}}>{mainAsset.content}</motion.p>
             <div><span>SHOP NOW</span><svg style={{height:"11px"}}><image href={arrow}/></svg></div>
             <div className="slider">
                 <div onClick={left} className="arrow" ><img src={leftsvg} /></div>
