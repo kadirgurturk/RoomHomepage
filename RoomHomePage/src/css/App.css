@@ -14,13 +14,33 @@ body .App {
   grid-template-rows: 490px 250px;
   position: relative;
 }
+@media all and (max-width: 650px) {
+  body .App {
+    display: flex;
+    flex-direction: column;
+  }
+}
 body .App .main {
   background-repeat: no-repeat;
+}
+@media all and (max-width: 650px) {
+  body .App .main {
+    z-index: 1;
+    width: 100%;
+  }
 }
 body .App .main1 {
   grid-column: 1/9;
   background-size: cover;
   background-position: center center;
+}
+@media all and (max-width: 650px) {
+  body .App .main1 {
+    z-index: 1;
+    height: 100vh;
+    background-size: cover;
+    background-color: aqua;
+  }
 }
 body .App .main1 .navbar {
   top: 45px;
@@ -32,10 +52,21 @@ body .App .main1 .navbar {
   justify-content: space-around;
   color: white;
 }
+body .App .main1 .navbar .sec {
+  opacity: 0.75;
+}
+body .App .main1 .navbar .sec:hover {
+  opacity: 1;
+}
 body .App .main2 {
   grid-column: 9/16;
   padding: 55px 55px;
   position: relative;
+}
+@media all and (max-width: 650px) {
+  body .App .main2 {
+    height: 450px;
+  }
 }
 body .App .main2 h1 {
   letter-spacing: 2px;
@@ -54,6 +85,23 @@ body .App .main2 div {
 body .App .main2 div span {
   letter-spacing: 7px;
 }
+body .App .main2 .shop {
+  position: absolute;
+  bottom: 125px;
+  left: 60px;
+}
+@media all and (max-width: 1280px) {
+  body .App .main2 .shop {
+    bottom: 25px;
+    left: 250px;
+  }
+}
+@media all and (max-width: 650px) {
+  body .App .main2 .shop {
+    left: 65px;
+    bottom: 45px;
+  }
+}
 body .App .main2 .slider {
   position: absolute;
   bottom: 0;
@@ -61,17 +109,38 @@ body .App .main2 .slider {
   display: flex;
   flex-direction: row;
 }
+@media all and (max-width: 650px) {
+  body .App .main2 .slider {
+    top: -95px;
+  }
+}
 body .App .main2 .slider .arrow {
   width: 4.6875vw;
   background-color: black;
-  height: 45px;
+  height: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+body .App .main2 .slider .arrow:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+@media all and (max-width: 650px) {
+  body .App .main2 .slider .arrow {
+    width: 75px;
+  }
+}
 body .App .main3 {
   background-image: url("../assets/image-about-dark.jpg");
   grid-column: 1/5;
+}
+@media all and (max-width: 650px) {
+  body .App .main3 {
+    z-index: 1;
+    height: 240px;
+    background-size: cover;
+  }
 }
 body .App .main4 {
   grid-column: 5/9;
@@ -94,4 +163,11 @@ body .App .main5 {
   background-position: right;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media all and (max-width: 650px) {
+  body .App .main5 {
+    z-index: 1;
+    height: 240px;
+    background-size: cover;
+  }
 }/*# sourceMappingURL=App.css.map */

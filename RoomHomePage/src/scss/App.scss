@@ -1,9 +1,15 @@
+@import "_mixin";
 
   @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
 
   $dg: hsl(0, 0%, 63%);
   $vdg:  hsl(0, 0%, 27%);
   $f: calc(100vw/16);
+  $small: 626;
+  $medium: 876px;
+
+  //1241
+  //876
 
 *{
     box-sizing: border-box;
@@ -18,9 +24,19 @@
         grid-template-rows: 490px 250px;
         position: relative;
 
+        @include mobile{
+            display: flex;
+            flex-direction: column;
+
+        }
+
         .main{
             background-repeat: no-repeat;
-            
+            @include mobile{
+                z-index: 1;
+                width: 100%;
+                
+            }
             
         }
 
@@ -28,6 +44,12 @@
             grid-column: 1/9;
             background-size: cover;
             background-position: center center;
+            @include mobile{
+                z-index: 1;
+                height: 100vh;
+                background-size: cover;
+                background-color: aqua;
+            }
 
             .navbar{
                 top: 45px;
@@ -38,6 +60,13 @@
                 flex-direction: row;
                 justify-content: space-around;
                 color: white;
+                .sec{   
+                opacity: 0.75;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+                
             }
             
         }
@@ -45,6 +74,11 @@
             grid-column: 9/16;
             padding: 55px 55px;
             position: relative;
+            @include mobile{                  
+                height: 450px;
+                
+                
+            }
 
             h1{
                 letter-spacing: 2px;
@@ -63,19 +97,47 @@
                     letter-spacing: 7px;
                 }
             }
+
+            .shop{
+                position: absolute;
+                bottom: 125px;
+                left: 60px;
+                 @include destkop{
+                    bottom: 25px;
+                    left: 250px
+                }
+                @include mobile{                  
+                    left: 65px;
+                    bottom: 45px;
+                    
+                }
+            }
             .slider{
                 position: absolute;
                 bottom: 0;
                 left:0;
                 display: flex;
                 flex-direction: row;
+                @include mobile{                  
+                    top:-95px;
+                    
+                }
+               
+
                 .arrow{
                    width: calc( 3*($f/4));
                    background-color: black;
-                   height: 45px;
+                   height: 55px;
                    display: flex;
                    justify-content: center;
                    align-items: center;
+                   &:hover{
+                    opacity: 0.8;
+                    cursor: pointer;
+                   }
+                   @include mobile{                  
+                    width: 75px;
+                    }
                     
                 }
             }
@@ -83,6 +145,11 @@
         .main3{
             background-image: url("../assets/image-about-dark.jpg");
             grid-column: 1/5;
+            @include mobile{
+                z-index: 1;
+                height: 240px;
+                background-size: cover;
+            }
         }
         .main4{
             grid-column: 5/9;
@@ -105,6 +172,11 @@
             grid-column: 9/16;
             background-position: right;
             object-fit: cover;
+            @include mobile{
+                z-index: 1;
+                height: 240px;
+                background-size: cover;
+            }
         }
         
       }

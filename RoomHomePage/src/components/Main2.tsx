@@ -33,9 +33,9 @@ export const Main2: React.FC<IProps> = ({count,setCount,mainAsset}) =>{
 
     return(
         <div className="main main2" >
-            <motion.h1 key={`title-${count}`} initial={{ opacity:0.1}} animate={{opacity:1}} transition={{duration:1.2}}>{mainAsset.title}</motion.h1>
+            <motion.h1 key={`title-${count}`} initial={{ opacity:0.1}} animate={{opacity:1}} transition={{duration:1.2,}}>{mainAsset.title}</motion.h1>
             <motion.p key={`content-${count}`} initial={{ opacity:0.1}} animate={{opacity:1}} transition={{duration:1.2}}>{mainAsset.content}</motion.p>
-            <div><span>SHOP NOW</span><svg style={{height:"11px"}}><image href={arrow}/></svg></div>
+            <motion.div whileHover={{scale:1.08, x:15}} className="shop"><span>SHOP NOW</span><svg style={{height:"11px"}}><image href={arrow}/></svg></motion.div>
             <div className="slider">
                 <div onClick={left} className="arrow" ><img src={leftsvg} /></div>
                 <div onClick={right} className="arrow" ><img src={rightsvg} /></div>
